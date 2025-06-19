@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task List - SJsquare</title>
+    <link rel="icon" href="SJsquare Logo.png" type="image/png">  
+
+	<link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-title">TO-DO List</div>
+        <ul class="nav-links">
+            <li id="nav-login"><a href="#">Login</a></li>
+        </ul>
+        <div id="nav-user" style="display:none;"></div>
+    </nav>
+    <div id="login-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="close-login-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <input type="submit" value="Login" />
+            </form>
+        </div>
+    </div>
+    <div id="main-layout">
+        <aside id="sidebar">
+            <h2>Previous Tasks</h2>
+            <ul id="sidebar-tasks"></ul>
+        </aside>
+        <div id="app-container">
+            <header>
+                <h1><span>TO-DO List</span></h1>
+                <form id="new-task-form">
+                    <input 
+                        type="text" 
+                        name="new-task-input" 
+                        id="new-task-input" 
+                        placeholder="What do you have planned?" />
+                    <input 
+                        type="datetime-local"
+                        name="new-task-reminder"
+                        id="new-task-reminder"
+                        placeholder="Set reminder (optional)" />
+                    <input 
+                        type="submit"
+                        id="new-task-submit" 
+                        value="Add task" />
+                </form>
+            </header>
+            <main>
+                <section class="task-list">
+                    <h2>Tasks</h2>
+                    <div id="tasks"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
